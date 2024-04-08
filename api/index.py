@@ -13,7 +13,7 @@ columns=['UID', 'Name', 'Sex', 'Age','10th', '12th', 'Sem1', 'Sem2','Sem3', 'Sem
 
 mapping = {value: index for index, value in enumerate(skills)}
 
-app = Flask(__name__,static_folder="dist",static_url_path="")
+app = Flask(__name__,static_folder="../dist",static_url_path="")
 CORS(app)
 
 @app.route("/")
