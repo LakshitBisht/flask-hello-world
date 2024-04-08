@@ -48,6 +48,9 @@ def predict():
     input_data['Skill2'] = input_data['Skill2'].map(skill_mapping)
     input_data['Skill3'] = input_data['Skill3'].map(skill_mapping)
     input_data['Skill4'] = input_data['Skill4'].map(skill_mapping)
+
+    minmax = pickle.load(open('minmaxscalar.pkl', 'rb'))
+    input_data = minmax.transform(input_data)
     
     # input_data = minmax.transform(input_data)
     model1 = pickle.load(open('course_assigned_model.pkl', 'rb'))
